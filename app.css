@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito|Comfortaa&display=swap');
+
+body {
+	font-family: 'Comfortaa';
+}
+
+.song {
+	border-bottom: solid 1px black;
+}
+
+.note {
+	font-size: 22px;
+	margin-right: 20px;
+}
+
+div {
+	display: block;
+	margin-bottom: 40px;
+}

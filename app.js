@@ -53,77 +53,6 @@ let songs = [
 				'D', 'E', 'D', 'F', 'G'
 			]
 		]
-	},
-	{
-		name: "Can't Help Falling In Love",
-		parts: [
-			[
-				'D', 'A', 'D', '|',
-				'E', 'F♯', 'G', 'F♯', 'E', '|',
-				'A', 'B', 'C♯', 'D', '|',
-				'E', 'F♯', 'G', 'F♯', 'E', 'D'
-			],
-			[
-				'C♯', 'F♯', 'A', 'C♯', 'B', '(3x)', '|',
-				'A', 'A', '|',
-				'F♯', 'A', 'F♯', 'G'
-			]
-		]
-	},
-	{
-		name: "Careless Whisper",
-		parts: [
-			[
-				'F♯', 'E', 'B', 'G', '|',
-				'D', 'C', 'G', 'E', '|',
-				'C', 'B', 'G', 'E', '|',
-				'B', 'C', 'D', 'E', 'F♯', 'G', 'A', 'B'
-			]
-		]
-	},
-	{
-		name: 'Just A Friend',
-		parts: [
-			[
-				'D', 'F♯', 'A', '(quick)', '|',
-				'F♯', 'E', 'D', '|',
-				'E', 'G', 'B', '(quick)', '|',
-				'B', 'D', 'E', 'F', 'E', 'D', 'E', '(2x)'
-			]
-		]
-	},
-	{
-		name: 'Tequila Song',
-		parts: [
-			[
-				'A', 'D', 'D', 'C', 'E', 'C', 'D', 'A', '|',
-				'A', 'D', 'D', 'C', 'E', 'C', 'D'
-			],
-			[
-				'A', 'C', 'D', 'F♯', 'D', '(3x)'
-			],
-			[
-				'E', 'E', 'E', 'E', 'E', 'E', 'C', 'tequila'
-			]
-		]
-	},
-	{
-		name: "Ain't No Sunshine",
-		parts: [
-			[
-				'F♯', 'A', 'B', 'D', 'C♯', 'A', 'B', '(2x)', '|',
-				'B', 'B', 'D', 'F♯', 'E', 'F♯', 'F♯', 'E', '|',
-				'D', 'E', 'D', 'B', 'A', 'B', 'A', 'B', '(2x)'
-			],
-			[
-				'A', 'B', 'A', 'B', '...', '|',
-				'A', 'B', 'A', 'D'
-			],
-			[
-				'F♯', 'E', 'F♯', 'F♯', 'G', 'F♯', 'F♯', 'E', 'D', 'E', '|',
-				'D', 'F♯', 'E', 'E', 'D', 'B', 'B', 'B', 'A'
-			]
-		]
 	}
 ];
 
@@ -137,8 +66,8 @@ function parsePart(part) {
 			part.splice(0, i);
 			let partP = document.createElement('p');
 			partP.classList.add('segment');
-			notes.forEach(note => { partP.appendChild(note) });
-			songDiv.appendChild(partP);
+			notes.forEach(note => { songPart.appendChild(note) });
+			songPart.appendChild(partP);
 			text = '';
 			notes = [];
 			i = 0;
