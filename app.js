@@ -1,3 +1,5 @@
+let songsWrapper = document.getElementsByClassName('songs-wrapper')[0];
+
 let songs = [
 	{
 		name: 'What A Wonderful World',
@@ -66,8 +68,8 @@ function parsePart(part) {
 			part.splice(0, i);
 			let partP = document.createElement('p');
 			partP.classList.add('segment');
-			notes.forEach(note => { songPart.appendChild(note) });
-			songPart.appendChild(partP);
+			notes.forEach(note => { partP.appendChild(note) });
+			songDiv.appendChild(partP);
 			text = '';
 			notes = [];
 			i = 0;
@@ -83,7 +85,7 @@ function parsePart(part) {
 	return songDiv;
 }
 
-function createSong(song) {
+function createSong(song, index) {
 	const songDiv = document.createElement('div');
 	songDiv.classList.add('song');
 
@@ -96,14 +98,33 @@ function createSong(song) {
 		songDiv.appendChild(songPart);
 	});
 
+	const editBtn = document.createElement('button');
+	editBtn.classList.add('edit-btn');
+	editBtn.textContent = 'edit';
+	editBtn.setAttribute('data-songid', index);
+	editBtn.addEventListener('click', (event) => {
+		// make HTML spans editable
+		let id = event.target.dataset.songid;
+		let theSong = document.getElementsByClassName('song')[id];
+		let allPs = theSong.getElementsByClassName('note');
+		for (let i = 0; i < allPs.length; i++) {
+			allPs[i].setAttribute('contenteditable', true);
+		}
+	});
+
+	// save button to set contenteditable to false and update current song
+	// then save to database or localStorage ?
+	// const saveBtn = document.createElement('button');
+
+	songDiv.appendChild(editBtn);
+
 	return songDiv;
 }
 
 function fillSongs() {
-	let songsWrapper = document.getElementsByClassName('songs-wrapper')[0];
 
-	songs.forEach(song => {
-		const songDiv = createSong(song);
+	songs.forEach((song, idx) => {
+		const songDiv = createSong(song, idx);
 		songsWrapper.appendChild(songDiv);
 	})
 }
