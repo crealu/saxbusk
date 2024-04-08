@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito|Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito|Comfortaa&family=Dosis:wght@200..800&family=Rajdhani:wght@300;400;500;600;700&display=swap');
 
 body {
-	font-family: 'Comfortaa';
+	font-family: 'Rajdhani', sans-serif;
 }
 
 .song {
