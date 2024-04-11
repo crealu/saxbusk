@@ -47,16 +47,13 @@ let songs = [
 		parts: [
 			[
 				'C♯', 'D', '|',
-				'G♯', 'A', 'B', 'C', 'B', 'A', '|',
-				'F', 'F♯', 'G', '|',
+				'G♯', 'A', 'B', 'C', 'B', 'A', 'F', 'F♯', 'G', '|',
 				'A', 'G', '|',
-				'F♯', 'F', 'F♯', 'G', '|',
-				'F', 'F♯', 'D', 'C'
+				'F♯', 'F', 'F♯', 'G', 'F', 'F♯', 'D', 'C'
 			],
 			[
-				'F', 'F', 'G', 'G', 'B', 'D', '|',
-				'C', 'B', '|',
-				'C', 'B', 'G', '|',
+				'F', 'F', 'G', '|',
+				'G', 'B', 'D', 'C', 'B', 'C', 'B', 'G', '|',
 				'B', 'C', 'D', '|',
 				'D', 'E', 'D', 'F', 'G'
 			]
@@ -259,10 +256,8 @@ let songs = [
 		key: 'C',
 		parts: [
 			[
-				'C♯', 'D', 'C♯', 'B', '}(2x)', '|',
-				'F♯', 'E', 'B', '|',
-				'C♯', 'D', 'C♯', 'B', '}(2x)', '|',
-				'F♯', 'E', 'A'
+				'C♯', 'D', 'C♯', 'B', '}(2x)', '', 'F♯', 'E', 'B', '|',
+				'C♯', 'D', 'C♯', 'B', '}(2x)', '', 'F♯', 'E', 'A'
 			],
 			[
 				'D', 'C-C♯', 'A', 'B', '', 'D', 'B', 'A', 'B', '|',
@@ -312,6 +307,48 @@ let songs = [
 				'A♯', 'G♯', 'F', 'G♯', 'A♯', 'G', 'F', 'D♯'
 			]
 		]
+	},
+	{
+		name: 'Great Fairy Fountain',
+		key: '',
+		parts: [
+			[
+				'C', 'E', 'G', 'A♯', 'D', '|',
+				'E', 'G', 'A♯', 'D', 'E', '|',
+				'G', 'A♯', 'D', 'E', 'G', '|',
+				'A♯', 'D', 'E', 'G', 'A♯', '|',
+				'D', 'E', 'G', 'A♯', 'D', '|',
+				'E', 'G', 'A♯', 'D', 'E'
+			],
+			[
+				'A♯', 'A♯', 'D', 'A', '|',
+				'D', 'A', 'G', 'C', 'A', 'G', 'D', '|',
+				'A', 'A', 'C', 'G', '|',
+				'A', 'A', 'G', 'F', 'G', 'F', 'C', '|',
+				'G', 'G', 'A♯', 'F', '|',
+				'G', 'G', 'F', 'E', 'G', 'E', 'C', 'A♯', '|',
+				'F', 'F', 'A', 'E', '|',
+				'F', 'F', 'E', 'D', 'G', 'F', 'C', 'A♯', '|',
+				'A♯', 'A♯', 'D', 'A', '|',
+				'A♯', 'A♯', 'A', 'G', 'D', 'A', 'G', 'D', '|',
+				'A', 'A', 'C', 'C', '|',
+				'D', 'D', 'C', 'A', 'D♯', 'D', 'C', 'A', '|',
+				'G', 'A♯', 'D', 'A♯', '|',
+				'G', 'A♯', 'A♯', 'A', 'C', 'A♯', 'G', 'D', '|',
+				'C', 'C', 'G', 'A♯', '|',
+				'C', 'C', 'A♯', 'G', 'E', 'D' 
+			],
+			[
+				'A', '[D A♯ G]', 'G', 'F♯', 'G', '|',
+				'G', '[C A F]', 'F', 'E', 'G', '|',
+				'F', '[A♯ G E]', 'E', 'D♯', 'E', '|',
+				'E', '[A F D]', 'D', 'C♯', 'D', '|',
+				'1', '|',
+				'A♯', '[D♯ C F♯]', 'A', 'G♯', 'A', '|',
+				'C', '[D A♯ G]', 'A♯', 'A', 'A♯', '|',
+				'A', '[A♯ G E]', 'G', 'F', 'E'
+			]
+		]
 	}
 ];
 
@@ -333,7 +370,18 @@ function parsePart(part) {
 		} else {
 			let note = document.createElement('span');
 			note.classList.add('note');
-			note.textContent = part[i];
+
+			if (part[i].length <= 2) {
+				note.classList.add('one-note');
+			}
+
+			if (part[i].includes('♯')) {
+				let str = part[i].replaceAll('♯', '<span class="sharp">♯</span>')
+				note.innerHTML = str;
+			} else {
+				note.innerHTML = part[i];
+			}
+
 			notes.push(note);
 		}
 		i++;
@@ -364,7 +412,7 @@ function fillSongs() {
 	songs.forEach(song => {
 		const songDiv = createSong(song);
 		songsWrapper.appendChild(songDiv);
-	})
+	});
 }
 
-fillSongs();
+window.addEventListener('load', fillSongs);

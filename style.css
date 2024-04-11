@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito|Comfortaa&family=Dosis:wght@200..800&family=Rajdhani:wght@300;400;500;600;700&display=swap');
 
 body {
-	font-family: 'Rajdhani', sans-serif;
+	font-family: 'Nunito', sans-serif;
 }
 
 .song {
@@ -12,9 +12,23 @@ body {
 	font-size: 24px;
 }
 
+.segment {
+	display: flex;
+	align-items: center;
+}
+
 .note {
+	display: flex;
 	font-size: 22px;
 	margin-right: 20px;
+}
+
+.sharp {
+	font-size: 14px;
+}
+
+.one-note {
+	width: 22px;
 }
 
 div {
