@@ -1,6 +1,9 @@
+let notes = ['A', 'A♯', 'B', 'C', 'C♯', 'D', 'D♯', 'E', 'F', 'F♯', 'G', 'G♯'];
+
 let songs = [
 	{
 		name: 'Autumn Leaves',
+		key: 'C',
 		parts: [
 			[
 				'F♯', 'G♯', 'A', 'D', '|',
@@ -29,6 +32,7 @@ let songs = [
 	},
 	{
 		name: 'Berimbau',
+		key: 'F',
 		parts: [
 			[
 				'E', 'D', '|',
@@ -44,6 +48,7 @@ let songs = [
 	},
 	{
 		name: 'Bathtub Gin',
+		key: 'C',
 		parts: [
 			[
 				'C♯', 'D', '|',
@@ -61,6 +66,7 @@ let songs = [
 	},
 	{
 		name: 'What A Wonderful World',
+		key: 'C',
 		parts: [
 			[
 				'C', 'D', 'F', 'C', '|', 
@@ -79,6 +85,7 @@ let songs = [
 	},
 	{
 		name: 'Tequila Song',
+		key: 'A',
 		parts: [
 			[
 				'A', 'D', 'D', 'C', 'E', 'C', 'D', 'A', '|',
@@ -94,6 +101,7 @@ let songs = [
 	},
 	{
 		name: "Ain't No Sunshine",
+		key: 'Em',
 		parts: [
 			[
 				'F♯', 'A', 'B', 'D', 'C♯', 'A', 'B', '(2x)', '|',
@@ -112,6 +120,7 @@ let songs = [
 	},
 	{
 		name: "Can't Help Falling In Love",
+		key: 'C',
 		parts: [
 			[
 				'D', 'A', 'D', '|',
@@ -128,6 +137,7 @@ let songs = [
 	},
 	{
 		name: "Careless Whisper",
+		key: 'A♯',
 		parts: [
 			[
 				'F♯', 'E', 'B', 'G', '|',
@@ -139,6 +149,7 @@ let songs = [
 	},
 	{
 		name: 'Just A Friend',
+		key: 'C',
 		parts: [
 			[
 				'D', 'F♯', 'A', '(quick)', '|',
@@ -150,6 +161,7 @@ let songs = [
 	},
 	{
 		name: 'Hallelujah',
+		key: 'C',
 		parts: [
 			[
 				'F♯', 'A', 'A', 'A', '|', 
@@ -172,6 +184,7 @@ let songs = [
 	},
 	{
 		name: 'Pokemon Theme',
+		key: 'C',
 		parts: [
 			[
 				'B (4x)', '', 'B', 'A', 'F♯', 'D', '|',
@@ -198,6 +211,7 @@ let songs = [
 	},
 	{
 		name: 'Baker Street',
+		key: 'F',
 		parts: [
 			[
 				'G', 'G', 'F♯', 'E', 'D', 'E', 'F♯', 'E', '|',
@@ -210,6 +224,7 @@ let songs = [
 
 	{
 		name: 'C Bluegrass Lick',
+		key: 'C',
 		parts: [
 			[
 				'D', 'B', 'F♯', 'B', 'A', 'F', 'F♯', 'F', '|',
@@ -310,63 +325,74 @@ let songs = [
 	},
 	{
 		name: 'Great Fairy Fountain',
-		key: '',
+		key: 'C',
 		parts: [
 			[
-				'C', 'E', 'G', 'A♯', 'D', '|',
-				'E', 'G', 'A♯', 'D', 'E', '|',
-				'G', 'A♯', 'D', 'E', 'G', '|',
-				'A♯', 'D', 'E', 'G', 'A♯', '|',
-				'D', 'E', 'G', 'A♯', 'D', '|',
-				'E', 'G', 'A♯', 'D', 'E'
+				'D', 'F♯', 'A', 'C', 'E', '|', 
+				'F♯', 'A', 'C', 'E', 'F♯', '|', 
+				'A', 'C', 'E', 'F♯', 'A', '|', 
+				'C', 'E', 'F♯', 'A', 'C', '|', 
+				'E', 'F♯', 'A', 'C', 'E', '|', 
+				'F♯', 'A', 'C', 'E', 'F♯'
 			],
 			[
-				'A♯', 'A♯', 'D', 'A', '|',
-				'D', 'A', 'G', 'C', 'A', 'G', 'D', '|',
-				'A', 'A', 'C', 'G', '|',
-				'A', 'A', 'G', 'F', 'G', 'F', 'C', '|',
-				'G', 'G', 'A♯', 'F', '|',
-				'G', 'G', 'F', 'E', 'G', 'E', 'C', 'A♯', '|',
-				'F', 'F', 'A', 'E', '|',
-				'F', 'F', 'E', 'D', 'G', 'F', 'C', 'A♯', '|',
-				'A♯', 'A♯', 'D', 'A', '|',
-				'A♯', 'A♯', 'A', 'G', 'D', 'A', 'G', 'D', '|',
-				'A', 'A', 'C', 'C', '|',
-				'D', 'D', 'C', 'A', 'D♯', 'D', 'C', 'A', '|',
-				'G', 'A♯', 'D', 'A♯', '|',
-				'G', 'A♯', 'A♯', 'A', 'C', 'A♯', 'G', 'D', '|',
-				'C', 'C', 'G', 'A♯', '|',
-				'C', 'C', 'A♯', 'G', 'E', 'D' 
+				'C', 'C', 'E', 'B', '|', 
+				'E', 'B', 'A', 'D', 'B', 'A', 'E', '|', 
+				'B', 'B', 'D', 'A', '|', 
+				'B', 'B', 'A', 'G', 'A', 'G', 'D', '|', 
+				'A', 'A', 'C', 'G', '|', 
+				'A', 'A', 'G', 'F♯', 'A', 'F♯', 'D', 'C', '|', 
+				'G', 'G', 'B', 'F♯', '|', 
+				'G', 'G', 'F♯', 'E', 'A', 'G', 'D', 'C', '|', 
+				'C', 'C', 'E', 'B', '|', 
+				'C', 'C', 'B', 'A', 'E', 'B', 'A', 'E', '|', 
+				'B', 'B', 'D', 'D', '|', 
+				'E', 'E', 'D', 'B', 'F', 'E', 'D', 'B', '|', 
+				'A', 'C', 'E', 'C', '|', 
+				'A', 'C', 'C', 'B', 'D', 'C', 'A', 'E', '|', 
+				'D', 'D', 'A', 'C', '|',
+				'D', 'D', 'C', 'A', 'F♯', 'E'
 			],
 			[
-				'A', '[D', 'A♯', 'G]', 'G', 'F♯', 'G', '|',
-				'G', '[C', 'A', 'F]', 'F', 'E', 'F', '|',
-				'F', '[A♯', 'G', 'E]', 'E', 'D♯', 'E', '|',
-				'E', '[A', 'F', 'D]', 'D', 'C♯', 'D', '|',
-				'1', '|',
-				'A♯', '[D♯','C', 'F♯]', 'A', 'G♯', 'A', '|',
-				'C', '[D', 'A♯', 'G]', 'A♯', 'A', 'A♯', '|',
-				'A', '[A♯', 'G', 'E]', 'G', 'F', 'E'
+				'B', '[E', 'C', 'A]', 'A', 'G♯', 'A', '|', 
+				'A', '[D', 'B', 'G]', 'G', 'F♯', 'G', '|', 
+				'G', '[C', 'A', 'F♯]', 'F♯', 'F', 'F♯', '|', 
+				'F♯', '[B', 'G', 'E]', 'E', 'D♯', 'E', '|', 
+				'1', '|', 
+				'C', '[F', 'D', 'G♯]', 'B', 'A♯', 'B', '|', 
+				'D', '[E', 'C', 'A]', 'C', 'B', 'C', '|', 
+				'B', '[C', 'A', 'F♯]', 'A', 'G', 'F♯'
 			]
 		]
 	}
 ];
 
-function parsePart(part) {
-	let songDiv = document.createElement('div');
-	let notes = [];
-	let i = 0;
+function createSegment(notes) {
+	let p = document.createElement('p');
+	p.classList.add('segment');
+	notes.forEach(note => { p.appendChild(note) });
+	return p;
+} 
 
-	while (part.length) {
-		if (part[i] == '|' || i > part.length - 1) {
-			part.splice(0, i);
-			let partP = document.createElement('p');
-			partP.classList.add('segment');
-			notes.forEach(note => { partP.appendChild(note) });
-			songDiv.appendChild(partP);
-			text = '';
-			notes = [];
-			i = 0;
+function checkSharp(part) {
+	let str = '';
+	if (part.includes('♯')) {
+		str = part.replaceAll('♯', '<span class="sharp">♯</span>')
+	} else {
+		str = part;
+	}
+	return str;
+}
+
+function parsePart(part) {
+	let partDiv = document.createElement('div');
+	let partNotes = [];
+	
+	for (let i = 0; i < part.length; i++) {
+		if (part[i] == '|' || i >= part.length - 1) {
+			let partP = createSegment(partNotes);
+			partDiv.appendChild(partP);
+			partNotes = [];
 		} else {
 			let note = document.createElement('span');
 			note.classList.add('note');
@@ -375,19 +401,14 @@ function parsePart(part) {
 				note.classList.add('one-note');
 			}
 
-			if (part[i].includes('♯')) {
-				let str = part[i].replaceAll('♯', '<span class="sharp">♯</span>')
-				note.innerHTML = str;
-			} else {
-				note.innerHTML = part[i];
-			}
+			let str = checkSharp(part[i]);
+			note.innerHTML = str;
 
-			notes.push(note);
+			partNotes.push(note);
 		}
-		i++;
 	}
 
-	return songDiv;
+	return partDiv;
 }
 
 function createSong(song) {
@@ -409,8 +430,9 @@ function createSong(song) {
 function fillSongs() {
 	let songsWrapper = document.getElementsByClassName('songs-wrapper')[0];
 
-	songs.forEach(song => {
+	songs.forEach((song, idx) => {
 		const songDiv = createSong(song);
+		songDiv.setAttribute('data-sid', idx);
 		songsWrapper.appendChild(songDiv);
 	});
 }
