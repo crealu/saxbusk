@@ -174,7 +174,16 @@ function loadRiffs() {
 			let fretboard = new Fretboard(newParts);
 			riffsWrapper.appendChild(fretboard.div);
 		}
+		let divider = document.createElement('div');
+		divider.classList.add('divider');
+		riffsWrapper.appendChild(divider);
 	}
 }
+
+// function loadSongs() {
+// 	for (let i = 0; i < songs.length; i++) {
+// 		loadRiffs(songs[i].parts);
+// 	}
+// }
 
 window.addEventListener('load', loadRiffs);

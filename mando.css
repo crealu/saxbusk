@@ -38,3 +38,10 @@
   font-size: 18px;
   text-align: center;
 }
+
+.divider {
+  background: black;
+  height: 5px;
+  width: 100%;
+  margin-bottom: 40px;
+}
