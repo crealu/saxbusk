@@ -243,7 +243,7 @@ let songs = [
 		]
 	},
 	{
-		name: 'Us (FKJ)',
+		name: 'Us',
 		key: 'A♯',
 		parts: [
 			[
@@ -251,7 +251,6 @@ let songs = [
 				'D', 'E', 'F', 'G', 'A', 'C', 'B', 'G', 'A', 'G', '|'
 			],
 			[
-				'Little fills', '|',
 				'E', 'G', 'E', '', 'E', 'G', 'B', '|',
 				'A', 'C', 'D-E', 'D-E', '|',
 				'C', 'D', 'B', 'A', 'G', 'E', '|'

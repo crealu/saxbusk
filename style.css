@@ -5,16 +5,24 @@ body {
 }
 
 .song {
+	padding: 10px 0px;
 	border-bottom: solid 1px black;
-	margin-bottom: 40px;
-	margin-top: 40px;
+	cursor: pointer;
 }
 
-.song h3 {
+.song:hover {
+	background: lightgray;
+}
+
+.song-title {
 	font-size: 24px;
 }
 
-.song div {
+.parts {
+	display: none;
+}
+
+.part {
 	margin-bottom: 40px;
 }
 
@@ -38,6 +46,10 @@ body {
 }
 
 .sax {
-	display: flex;
+	display: none;
 	width: 100px;
+}
+
+.expand-all-btn {
+
 }
