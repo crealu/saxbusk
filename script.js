@@ -1,11 +1,66 @@
 let notes = ['A', 'A♯', 'B', 'C', 'C♯', 'D', 'D♯', 'E', 'F', 'F♯', 'G', 'G♯'];
+const saxNotes = [
+  {
+    name: 'C♯',
+    pads: []    	
+  },  
+  {
+    name: 'C',
+    pads: [2]
+  },
+  {
+    name: 'B',
+    pads: [1]
+  },  
+  {
+    name: 'A♯',
+    pads: [1, 7]
+  },
+  {
+    name: 'A',
+    pads: [1, 2]
+  },  
+  {
+    name: 'G♯',
+    pads: [1, 2, 3, 8]
+  },
+  {
+    name: 'G',
+    pads: [1, 2, 3]
+  },
+  {
+    name: 'F♯',
+    pads: [1, 2, 3, 5]
+  },
+  {
+    name: 'F',
+    pads: [1, 2, 3, 4]
+  },
+  {
+    name: 'E',
+    pads: [1, 2, 3, 4, 5]
+  },
+  {
+    name: 'D♯',
+    pads: [1, 2, 3, 4, 5, 6, 11]
+  },
+  {
+    name: 'D',
+    pads: [1, 2, 3, 4, 5, 6]
+  },
+  {
+    name: 'C♯',
+    pads: [1, 2, 3, 4, 5, 6, 10, 12]
+  }
+]
+let sax = document.getElementsByClassName('sax')[0];
 
 function createSegment(notes) {
 	let p = document.createElement('p');
 	p.classList.add('segment');
 	notes.forEach(note => { p.appendChild(note) });
 	return p;
-} 
+}
 
 function checkSharp(part) {
 	let str = '';
@@ -68,6 +123,33 @@ function fillSongs() {
 		songDiv.setAttribute('data-sid', idx);
 		songsWrapper.appendChild(songDiv);
 	});
+}
+
+function saxify() {
+	let last = songs.length - 1;
+	let song = songs[last];
+	let songDiv = document.getElementsByClassName('song')[last];
+	let segment = 1;
+	let part = song.parts[segment];
+	let subseg = 0;
+	for (let i = 0; i < part.length; i++) {
+		let note = part[i];
+
+		for (let j = 0; j < saxNotes.length; j++) {
+			if (note == saxNotes[j].name) {
+				let newSax = sax.cloneNode(true);
+				for (let a = 0; a < saxNotes[j].pads.length; a++) {
+					let pad = saxNotes[j].pads[a] - 1;
+					newSax.children[pad].style.fill = 'red';
+				}
+				songDiv.appendChild(newSax);
+			}
+		}
+
+		if (note == '|') {
+			songDiv.innerHTML += '<br/>';
+		}
+	}
 }
 
 window.addEventListener('load', fillSongs);

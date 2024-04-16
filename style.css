@@ -6,10 +6,16 @@ body {
 
 .song {
 	border-bottom: solid 1px black;
+	margin-bottom: 40px;
+	margin-top: 40px;
 }
 
 .song h3 {
 	font-size: 24px;
+}
+
+.song div {
+	margin-bottom: 40px;
 }
 
 .segment {
@@ -31,7 +37,7 @@ body {
 	width: 22px;
 }
 
-div {
-	display: block;
-	margin-bottom: 40px;
+.sax {
+	display: flex;
+	width: 100px;
 }
