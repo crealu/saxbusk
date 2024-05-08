@@ -49,6 +49,7 @@ function parsePart(part) {
 		} else {
 			let note = document.createElement('span');
 			note.classList.add('note');
+			console.log(part[i]);
 
 			if (part[i].length <= 2) {
 				note.classList.add('one-note');
@@ -65,10 +66,10 @@ function parsePart(part) {
 }
 
 function toggleElement(el) {
-	if (el.style.display == 'none') {
-		el.style.display = 'block';
-	} else {
+	if (el.style.display == 'block') {
 		el.style.display = 'none';
+	} else {
+		el.style.display = 'block';
 	}
 }
 
@@ -136,7 +137,7 @@ function createSong(song) {
 }
 
 function isNote(note) {
-	return note != '|' && note != '' && note != '[' && note != ']' && note != '1'
+	return note != '|' && note != '' && note != '[' && note != ']' && note != '1' && !note.includes('(');
 }
 
 function adjustParts(shift) {
@@ -147,8 +148,10 @@ function adjustParts(shift) {
 			let newNote = note;
 			if (isNote(note)) {
 				let index = indices[note] + shift;
-				if (index >= 11) {
-					index -= 11;
+				if (index >= 12) {
+					index -= 12;
+				} else if (index < 0) {
+					index += 12;
 				}
 				newNote = notes[index];
 			}
@@ -166,16 +169,10 @@ function changeKey(event) {
 	let fromKey = songs[sid].key;
 	let toKey = event.target.textContent;
 
-	console.log(fromKey, toKey);
-
 	let diff = indices[toKey] - indices[fromKey];
-	let shift = diff;
+	console.log(fromKey, toKey, diff);
 
-	if (diff < 0) {
-		shift *= -1;
-	}3
-
-	let newParts = adjustParts(shift);
+	let newParts = adjustParts(diff);
 
 	let songDiv = document.getElementsByClassName('song')[sid];
 	let keyText = document.getElementsByClassName('key-text')[sid];
