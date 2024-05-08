@@ -95,7 +95,7 @@ let songs = [
 	},
 	{
 		name: "Ain't No Sunshine",
-		key: 'Em',
+		key: 'G',
 		parts: [
 			[
 				'F♯', 'A', 'B', 'D', 'C♯', 'A', 'B', '|',
@@ -478,7 +478,7 @@ let songs = [
 	},
 	{
 		name: 'Plastic Love',
-		key: 'F (A♯)',
+		key: 'F',
 		parts: [
 			[
 				'B', 'B', 'A', 'B', '|',
