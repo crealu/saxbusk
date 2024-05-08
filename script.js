@@ -73,6 +73,15 @@ function toggleElement(el) {
 	}
 }
 
+function toggleActive() {
+	let activeKeyWrapper = document.getElementsByClassName('active-key-wrapper')[0];
+	if (activeKeyWrapper) {
+		activeKeyWrapper.classList.remove('active-key-wrapper');
+	}
+	let keyWrapper = document.getElementsByClassName('key-wrapper')[sid];
+	keyWrapper.classList.add('active-key-wrapper');
+}
+
 function expandParts(event) {
 	if (event.target.classList[0] == 'song') {
 		let parts = event.target.children[2];
@@ -83,22 +92,22 @@ function expandParts(event) {
 		sid = event.target.parentNode.dataset.sid;
 		toggleElement(parts);
 	}
-
-	console.log(sid);
+	toggleActive();
 }
 
 function handleKeyClick(event) {
 	event.preventDefault();
+	keyMenu.style.top = (event.clientY + 20).toString() + 'px';
 	toggleElement(keyMenu);
 }
 
 function addKey(songDiv, key) {
 	const iconWrapper = document.createElement('div');
-	iconWrapper.classList.add('icon-wrapper');
+	iconWrapper.classList.add('key-wrapper');
 
 	const icon = document.createElement('img');
 	icon.classList.add('key-icon');
-	icon.src = './img/key-icon.svg';
+	icon.src = './img/key.svg';
 
 	const keyText = document.createElement('p');
 	keyText.classList.add('key-text');
@@ -137,7 +146,18 @@ function createSong(song) {
 }
 
 function isNote(note) {
-	return note != '|' && note != '' && note != '[' && note != ']' && note != '1' && !note.includes('(');
+	return note != '|' 
+			&& note != '' 
+			&& note != '[' 
+			&& note != ']' 
+			&& note != '1' 
+			&& !note.includes('(');
+}
+
+function bump(index) {
+	return index >= 12 ? index - 12
+			 : index < 0 ? index + 12
+			 : index;
 }
 
 function adjustParts(shift) {
@@ -148,11 +168,7 @@ function adjustParts(shift) {
 			let newNote = note;
 			if (isNote(note)) {
 				let index = indices[note] + shift;
-				if (index >= 12) {
-					index -= 12;
-				} else if (index < 0) {
-					index += 12;
-				}
+				index = bump(index);
 				newNote = notes[index];
 			}
 
@@ -170,7 +186,6 @@ function changeKey(event) {
 	let toKey = event.target.textContent;
 
 	let diff = indices[toKey] - indices[fromKey];
-	console.log(fromKey, toKey, diff);
 
 	let newParts = adjustParts(diff);
 
@@ -190,6 +205,7 @@ function changeKey(event) {
 	keyText.textContent = toKey;
 	songs[sid].key = toKey;
 	songs[sid].parts = newParts;
+	toggleElement(keyMenu);
 }
 
 function addKeyChangeListener() {

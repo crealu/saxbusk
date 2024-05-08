@@ -6,9 +6,9 @@ body {
 
 .song {
 	display: grid;
-	grid-template-columns: 85% 15%;
 	padding: 10px 0px;
 	border-bottom: solid 1px black;
+	grid-template-columns: 85% 15%;
 	cursor: pointer;
 }
 
@@ -17,23 +17,41 @@ body {
 	font-size: 24px;
 }
 
-.icon-wrapper {
-	display: block;
+.key-wrapper {
+	display: none;
+	justify-content: space-evenly;
+	align-items: center;
+	grid-column: 2;
+}
+
+.active-key-wrapper {
+	display: flex;
 }
 
 .key-icon {
 	position: relative;
-	top: 20px;
-	margin-right: 60px;
-	grid-row: 1;
-	grid-column: 3;
 }
 
 .key-text {
 	position: relative;
-	top: -25px;
-	left: 6px;
 	display: block;
+	cursor: pointer;
+	padding: 8px;
+	border-radius: 4px;
+}
+
+.key-text:hover {
+	background: rgba(0, 0, 0, 0.2);
+}
+
+.key-note {
+	cursor: pointer;
+	margin: 0px;
+	padding: 6px 0px;
+}
+
+.key-note:hover {
+	background: rgba(0, 0, 0, 0.2);
 }
 
 .parts {
@@ -74,9 +92,8 @@ body {
 	position: fixed;
 	display: none;
 	top: 0px;
-	right: 0px;
+	right: 20px;
 	width: 60px;
-	height: 200px;
 	overflow-y: scroll;
 	border-radius: 6px;
 	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
