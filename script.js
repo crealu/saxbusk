@@ -49,7 +49,6 @@ function parsePart(part) {
 		} else {
 			let note = document.createElement('span');
 			note.classList.add('note');
-			console.log(part[i]);
 
 			if (part[i].length <= 2) {
 				note.classList.add('one-note');
@@ -83,15 +82,20 @@ function toggleActive() {
 }
 
 function expandParts(event) {
+	let elementToScroll;
 	if (event.target.classList[0] == 'song') {
 		let parts = event.target.children[2];
+		elementToScroll = event.target;
 		sid = event.target.dataset.sid;
 		toggleElement(parts);
 	} else if (event.target.classList[0] == 'song-title') {
+		elementToScroll = event.target.parentNode;
 		let parts = event.target.nextSibling.nextSibling;
 		sid = event.target.parentNode.dataset.sid;
 		toggleElement(parts);
 	}
+
+	elementToScroll.scrollIntoView({behavior: 'smooth', block: 'start'})
 	toggleActive();
 }
 
