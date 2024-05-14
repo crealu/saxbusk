@@ -4,6 +4,7 @@ const sax = document.getElementsByClassName('sax')[0];
 const keyMenu = document.getElementsByClassName('key-menu')[0];
 
 let expanded = false;
+let sid = 0;
 
 const notes = ['A', 'A♯', 'B', 'C', 'C♯', 'D', 'D♯', 'E', 'F', 'F♯', 'G', 'G♯'];
 const indices = {
@@ -21,7 +22,6 @@ const indices = {
   "G♯": 11
 }
 
-let sid = 0;
 
 function createSegment(notes) {
 	let p = document.createElement('p');
