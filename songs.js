@@ -689,7 +689,7 @@ let songs = [
 		]
 	},
 	{
-		name: "Fly Me To The Moon (Ella Intro)":
+		name: "Fly Me To The Moon (Ella Intro)",
 		key: "C♯",
 		parts: [
 			[
