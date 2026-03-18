@@ -689,6 +689,19 @@ let songs = [
 		]
 	},
 	{
+		name: "Fly Me To The Moon (Ella Intro)":
+		key: "C♯",
+		parts: [
+			'G', 'A', 'B', 'B', '', 'F♯', 'G', 'A', 'B', '|',
+			'G', 'B', 'A', 'B', 'D', 'F♯', '|',
+			'A', 'B', 'C', '', 'G', 'B', 'A', 'C', '|',
+			'B', 'B', 'F♯', 'C', 'A', 'B', '|',
+			'D', 'E', 'E', 'E', '', 'E', 'F♯', 'E', 'D', '|',
+			'A', 'B', '', 'C', 'C', 'C', '', 'E', 'D', 'C', 'C', '|',
+			'C', 'B', 'A', 'A', '', 'A', 'A', 'D', 'C', 'C', 'C', '|'
+		]
+	},
+	{
 		name: "Fly Me To The Moon",
 		key: 'A♯',
 		parts: [
@@ -711,6 +724,7 @@ let songs = [
 			]
 		]
 	},
+
 	{
 		name: "Smooth Operator",
 		key: 'Em',
